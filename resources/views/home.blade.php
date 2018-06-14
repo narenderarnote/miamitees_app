@@ -30,7 +30,7 @@
                                         </span>
                                     </td>
                                     <td class="text-center">
-                                        <a href="addproduct.html" class="sync-add btn btn-default">
+                                        <a href="{{route('dashboard.sync')}}" class="sync-add btn btn-default">
                                         Sync / Add Product  
                                         </a>
                                     </td>
@@ -52,7 +52,7 @@
                                         </span>
                                     </td>
                                     <td class="text-center">
-                                        <a href="addproduct.html" class="sync-add btn btn-default">
+                                        <a href="{{route('dashboard.sync')}}" class="sync-add btn btn-default">
                                         Sync / Add Product         
                                         </a>
                                     </td>

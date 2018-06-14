@@ -40,7 +40,7 @@
                     <a class="nav-link" href="/login">{{__('Login')}}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/register">{{__('Register')}}</a>
+                    <a class="nav-link" href="/register">{{__('Sign Up')}}</a>
                 </li>
             </ul>
         </div>

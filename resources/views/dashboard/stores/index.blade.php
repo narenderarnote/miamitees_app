@@ -15,7 +15,7 @@
 
         <nav aria-label="breadcrumb">
             
-            <ol class="breadcrumb">
+            <ol class="breadcrumb bg-light">
 
                 <li class="breadcrumb-item"><a href="{{route('/')}}">Stores</a></li>
 
@@ -38,13 +38,17 @@
 
         <h5 class="mt-5">PreslavDemo</h5>
 
-        <div class="bg-light text-center col-md-12 py-4">
+        <div class="card bg-light py-3">
 
-            <button type="button" class="btn btn-warning btn-lg text-white" data-toggle="modal" data-target="#addproduct-ist">
+            <div class="card-body text-center">
+            
+                <button type="button" class="btn btn-warning btn-lg text-white px-5 py-1" data-toggle="modal" data-target="#addproduct-ist">
 
-                Add Product                   
+                    Add Product                   
 
-            </button>
+                </button>
+
+            </div>
 
         </div>
 
@@ -120,15 +124,15 @@
 
                                             <b>Size</b>:
 
-                                            <span class="label label-default">S</span>
+                                            <span class="badge badge-secondary">S</span>
 
-                                            <span class="label label-default">M</span>
+                                            <span class="badge badge-secondary">M</span>
 
-                                            <span class="label label-default">L</span>
+                                            <span class="badge badge-secondary">L</span>
 
-                                            <span class="label label-default">XL</span>
+                                            <span class="badge badge-secondary">XL</span>
 
-                                            <span class="label label-default">2XL</span>
+                                            <span class="badge badge-secondary">2XL</span>
 
                                         </div>
 
@@ -136,17 +140,17 @@
 
                                             <b>Color</b>:
 
-                                            <span title="Kelly Green" class="d-inline w-15 h-15 bd" style="background-color: #278835"></span>
+                                            <span title="Kelly Green" class="d-inline-block w-15 h-15 bd" style="background-color: #278835"></span>
 
-                                            <span title="Purple Rush" class="d-inline w-15 h-15 bd" style="background-color: #5d1399"></span>
+                                            <span title="Purple Rush" class="d-inline-block w-15 h-15 bd" style="background-color: #5d1399"></span>
 
-                                            <span title="Red" class="d-inline w-15 h-15 bd" style="background-color: #c01c34"></span>
+                                            <span title="Red" class="d-inline-block w-15 h-15 bd" style="background-color: #c01c34"></span>
 
                                         </div>
 
                                         <div class="sync-status text-center">
 
-                                        <div class="synced d-inline">
+                                        <div class="synced d-inline-block">
 
                                             <div class="value">15</div>
 
@@ -154,9 +158,9 @@
 
                                         </div>
 
-                                        <div class="d-inline">|</div>
+                                        <div class="d-inline-block">|</div>
 
-                                        <div class="notSynced d-inline">
+                                        <div class="notSynced d-inline-block">
 
                                             <div class="value">0</div>
 
@@ -164,9 +168,9 @@
 
                                         </div>
 
-                                        <div class="d-inline">|</div>
+                                        <div class="d-inline-block">|</div>
 
-                                        <div class="ignored d-inline">
+                                        <div class="ignored d-inline-block">
 
                                             <div class="value">0</div>
 
@@ -180,7 +184,7 @@
 
                                     <td colspan="2" class="store-delete text-center">
 
-                                        <a href="editproduct.html" class="btn btn-primary btn-block">
+                                        <a href="editproduct.html" class="btn btn-primary btn-block px-5">
 
                                         Edit                       
 
@@ -194,7 +198,7 @@
 
                                             <input type="hidden" name="_token" value="Hy7GXzQk6gZ5vBLM2xwVprPrgkWtmPdgayEpsMyF">
 
-                                            <button type="submit" class="btn btn-default btn-block">Ignore Product</button>
+                                            <button type="submit" class="btn btn-white btn-block px-5">Ignore Product</button>
 
                                         </form>
 
@@ -232,15 +236,15 @@
 
                                             <b>Size</b>:
 
-                                            <span class="label label-default">S</span>
+                                            <span class="badge badge-secondary">S</span>
 
-                                            <span class="label label-default">M</span>
+                                            <span class="badge badge-secondary">M</span>
 
-                                            <span class="label label-default">L</span>
+                                            <span class="badge badge-secondary">L</span>
 
-                                            <span class="label label-default">XL</span>
+                                            <span class="badge badge-secondary">XL</span>
 
-                                            <span class="label label-default">2XL</span>
+                                            <span class="badge badge-secondary">2XL</span>
 
                                         </div>
 
@@ -248,17 +252,17 @@
 
                                             <b>Color</b>:
 
-                                            <span title="Kelly Green" class="d-inline w-15 h-15 bd" style="background-color: #278835"></span>
+                                            <span title="Kelly Green" class="d-inline-block w-15 h-15 bd" style="background-color: #278835"></span>
 
-                                            <span title="Purple Rush" class="d-inline w-15 h-15 bd" style="background-color: #5d1399"></span>
+                                            <span title="Purple Rush" class="d-inline-block w-15 h-15 bd" style="background-color: #5d1399"></span>
 
-                                            <span title="Red" class="d-inline w-15 h-15 bd" style="background-color: #c01c34"></span>
+                                            <span title="Red" class="d-inline-block w-15 h-15 bd" style="background-color: #c01c34"></span>
 
                                         </div>
 
                                         <div class="sync-status text-center">
 
-                                            <div class="synced d-inline">
+                                            <div class="synced d-inline-block">
 
                                                 <div class="value">15</div>
 
@@ -266,9 +270,9 @@
 
                                             </div>
 
-                                            <div class="d-inline">|</div>
+                                            <div class="d-inline-block">|</div>
 
-                                            <div class="notSynced d-inline">
+                                            <div class="notSynced d-inline-block">
 
                                                 <div class="value">0</div>
 
@@ -276,9 +280,9 @@
 
                                             </div>
 
-                                            <div class="d-inline">|</div>
+                                            <div class="d-inline-block">|</div>
 
-                                            <div class="ignored d-inline">
+                                            <div class="ignored d-inline-block">
 
                                                 <div class="value">0</div>
 
@@ -292,7 +296,7 @@
 
                                     <td colspan="2" class="store-delete text-center">
 
-                                        <a href="#" class="btn btn-primary btn-block">
+                                        <a href="#" class="btn btn-primary btn-block px-5">
 
                                             Edit                       
 
@@ -300,13 +304,13 @@
 
                                     </td>
 
-                                    <td class="text-center store-last">
+                                    <td class="text-center">
 
                                         <form method="POST" action="#">
 
                                             <input type="hidden" name="_token" value="Hy7GXzQk6gZ5vBLM2xwVprPrgkWtmPdgayEpsMyF">
 
-                                            <button type="submit" class="btn btn-default btn-block">Ignore Product</button>
+                                            <button type="submit" class="btn  btn-block px-5 btn-white">Ignore Product</button>
 
                                         </form>
 
@@ -362,7 +366,7 @@
 
                                             Moderation Status:
 
-                                            <div class="label label-default">Auto Approved</div>
+                                            <div class="badge badge-secondary">Auto Approved</div>
 
                                         </div>
 
@@ -374,19 +378,19 @@
 
                                             <b>Size</b>:
 
-                                            <span class="label label-default">XS</span>
+                                            <span class="badge badge-secondary">XS</span>
 
-                                            <span class="label label-default">S</span>
+                                            <span class="badge badge-secondary">S</span>
 
-                                            <span class="label label-default">M</span>
+                                            <span class="badge badge-secondary">M</span>
 
-                                            <span class="label label-default">L</span>
+                                            <span class="badge badge-secondary">L</span>
 
-                                            <span class="label label-default">XL</span>
+                                            <span class="badge badge-secondary">XL</span>
 
-                                            <span class="label label-default">2XL</span>
+                                            <span class="badge badge-secondary">2XL</span>
 
-                                            <span class="label label-default">3XL</span>
+                                            <span class="badge badge-secondary">3XL</span>
 
                                         </div>
 
@@ -394,23 +398,23 @@
 
                                             <b>Color</b>:
 
-                                            <span title="CHERRY RED" class="d-inline w-15 h-15 bd" style="background-color: #d10134"></span>
+                                            <span title="CHERRY RED" class="d-inline-block w-15 h-15 bd" style="background-color: #d10134"></span>
 
-                                            <span title="Daisy" class="d-inline w-15 h-15 bd" style="background-color: #fed201"></span>
+                                            <span title="Daisy" class="d-inline-block w-15 h-15 bd" style="background-color: #fed201"></span>
 
-                                            <span title="DARK HEATHER" class="d-inline w-15 h-15 bd" style="background-color: #4b4a50"></span>
+                                            <span title="DARK HEATHER" class="d-inline-block w-15 h-15 bd" style="background-color: #4b4a50"></span>
 
-                                            <span title="HEATHER RED" class="d-inline w-15 h-15 bd" style="background-color: #e53e5c"></span>
+                                            <span title="HEATHER RED" class="d-inline-block w-15 h-15 bd" style="background-color: #e53e5c"></span>
 
-                                            <span title="HEATHER SAPPHIRE" class="d-inline w-15 h-15 bd" style="background-color: #44c8fe"></span>
+                                            <span title="HEATHER SAPPHIRE" class="d-inline-block w-15 h-15 bd" style="background-color: #44c8fe"></span>
 
-                                            <span title="KIWI" class="d-inline w-15 h-15 bd" style="background-color: #bdd357"></span>
+                                            <span title="KIWI" class="d-inline-block w-15 h-15 bd" style="background-color: #bdd357"></span>
 
-                                            <span title="Maroon" class="d-inline w-15 h-15 bd" style="background-color: #6c1f3f"></span>
+                                            <span title="Maroon" class="d-inline-block w-15 h-15 bd" style="background-color: #6c1f3f"></span>
 
-                                            <span title="NATURAL" class="d-inline w-15 h-15 bd" style="background-color: #dcd6c1"></span>
+                                            <span title="NATURAL" class="d-inline-block w-15 h-15 bd" style="background-color: #dcd6c1"></span>
 
-                                            <span title="Azalea" class="d-inline w-15 h-15 bd" style="background-color: #f27eb2"></span>
+                                            <span title="Azalea" class="d-inline-block w-15 h-15 bd" style="background-color: #f27eb2"></span>
 
                                         </div>
 
@@ -428,7 +432,7 @@
 
                                     <td class="text-center store-last">
 
-                                        <button disabled="disabled" type="button" class="btn btn-primary btn-block disabled">
+                                        <button disabled="disabled" type="button" class="btn btn-danger px-4 btn-block disabled">
 
                                         Queued for sync                                
 
@@ -458,7 +462,7 @@
 
                                             Moderation Status:
 
-                                            <div class="label label-default">Auto Approved</div>
+                                            <div class="badge badge-secondary">Auto Approved</div>
 
                                         </div>
 
@@ -470,19 +474,19 @@
 
                                             <b>Size</b>:
 
-                                            <span class="label label-default">XS</span>
+                                            <span class="badge badge-secondary">XS</span>
 
-                                            <span class="label label-default">S</span>
+                                            <span class="badge badge-secondary">S</span>
 
-                                            <span class="label label-default">M</span>
+                                            <span class="badge badge-secondary">M</span>
 
-                                            <span class="label label-default">L</span>
+                                            <span class="badge badge-secondary">L</span>
 
-                                            <span class="label label-default">XL</span>
+                                            <span class="badge badge-secondary">XL</span>
 
-                                            <span class="label label-default">2XL</span>
+                                            <span class="badge badge-secondary">2XL</span>
 
-                                            <span class="label label-default">3XL</span>
+                                            <span class="badge badge-secondary">3XL</span>
 
                                         </div>
 
@@ -490,23 +494,23 @@
 
                                             <b>Color</b>:
 
-                                            <span title="CHERRY RED" class="d-inline w-15 h-15 bd" style="background-color: #d10134"></span>
+                                            <span title="CHERRY RED" class="d-inline-block w-15 h-15 bd" style="background-color: #d10134"></span>
 
-                                            <span title="Daisy" class="d-inline w-15 h-15 bd" style="background-color: #fed201"></span>
+                                            <span title="Daisy" class="d-inline-block w-15 h-15 bd" style="background-color: #fed201"></span>
 
-                                            <span title="DARK HEATHER" class="d-inline w-15 h-15 bd" style="background-color: #4b4a50"></span>
+                                            <span title="DARK HEATHER" class="d-inline-block w-15 h-15 bd" style="background-color: #4b4a50"></span>
 
-                                            <span title="HEATHER RED" class="d-inline w-15 h-15 bd" style="background-color: #e53e5c"></span>
+                                            <span title="HEATHER RED" class="d-inline-block w-15 h-15 bd" style="background-color: #e53e5c"></span>
 
-                                            <span title="HEATHER SAPPHIRE" class="d-inline w-15 h-15 bd" style="background-color: #44c8fe"></span>
+                                            <span title="HEATHER SAPPHIRE" class="d-inline-block w-15 h-15 bd" style="background-color: #44c8fe"></span>
 
-                                            <span title="KIWI" class="d-inline w-15 h-15 bd" style="background-color: #bdd357"></span>
+                                            <span title="KIWI" class="d-inline-block w-15 h-15 bd" style="background-color: #bdd357"></span>
 
-                                            <span title="Maroon" class="d-inline w-15 h-15 bd" style="background-color: #6c1f3f"></span>
+                                            <span title="Maroon" class="d-inline-block w-15 h-15 bd" style="background-color: #6c1f3f"></span>
 
-                                            <span title="NATURAL" class="d-inline w-15 h-15 bd" style="background-color: #dcd6c1"></span>
+                                            <span title="NATURAL" class="d-inline-block w-15 h-15 bd" style="background-color: #dcd6c1"></span>
 
-                                            <span title="Azalea" class="d-inline w-15 h-15 bd" style="background-color: #f27eb2"></span>
+                                            <span title="Azalea" class="d-inline-block w-15 h-15 bd" style="background-color: #f27eb2"></span>
 
                                         </div>
 
@@ -518,13 +522,13 @@
 
                                     <td class="text-center store-delete">
 
-                                        <button type="submit" class="btn btn-danger btn-block js-confirm" data-toggle="modal" data-target="#delete-product">Delete</button>
+                                        <button type="submit" class="btn btn-danger btn-block js-confirm px-4" data-toggle="modal" data-target="#delete-product">Delete</button>
 
                                     </td>
 
                                     <td class="text-center store-last">
 
-                                        <button disabled="disabled" type="button" class="btn btn-primary btn-block disabled">
+                                        <button disabled="disabled" type="button" class="btn btn-danger btn-block disabled">
 
                                         Queued for sync                                
 

@@ -1,17 +1,54 @@
 // @import "./spark/spark";
 @import "./../../../vendor/laravel/spark-aurelius/resources/assets/sass/spark";
   #app-layout {
+    .btn-white {
+      background-color: #fff;
+      border: 1px solid #ddd;
+    }
+    .btn-white:hover {
+      background-color: #e6e6e6;
+    }
     background-color: #FFF;
+    .container {
+    max-width: 1060px;
+    }
     .navbar-spark{
       height:50px;
+      .navbar-brand {
+        display: block;
+        min-width: 200px;
+        height: 50px;
+        margin: 0;
+        font-weight:400;
+        font-size: 18px;
+        color:#777;
+        padding-top:12px;
+        img {
+          max-width: 165px;
+        }
+      }
+      .navbar-nav{
+        a{
+          color: #777;
+          font-weight: 400;
+        }
+      }
     }
     .navbar-static-top {
       margin: 0;
-      background: #e7e7e7;
+      background: #f8f8f8;
     }
     .top-nav-secondary {
       border-bottom: 1px solid #EEE;
       background: #282828;
+      .navbar-header{
+        .navbar-brand{
+          padding:15px;
+          img {
+            max-width: 165px;
+          }
+        }  
+      }
       li {
         > a {
           color: #F2C994;
@@ -36,21 +73,15 @@
           }
         }
       }
-      .navbar-brand {
-        display: block;
-        min-width: 200px;
-        height: 50px;
-        margin: 0;
-        img {
-          max-width: 165px;
-        }
-      }
     }
     .sync-add {
       border-radius: 5px;
       padding: 4px 10px;
       font-size: 14px;
       font-weight: 400;
+      &:hover {
+        background:#f2f2f2;
+      }
     }
     .btn-primary {
       color: #FFF !important;
@@ -64,7 +95,6 @@
     a {
       &:hover {
         text-decoration: none;
-        background-color:#d2d2d2;
       }
       &.btn-link {
         color: #f00;
@@ -96,7 +126,19 @@
     z-index: 9999999999999;
   }
   main{
+    .breadcrumb{
+      padding:8px 15px;
+      .breadcrumb-item.active{
+        color:#333;
+      }
+    }
     .printfile-tabs{
+      .h-15 {
+    height: 15px;
+    }
+      .w-15 {
+      width: 15px;
+      } 
       .show-chooseitems {
         margin-top: 28px;
         .h-150 {
@@ -109,6 +151,7 @@
           a{
             padding:10px 15px;
             color:#f00;
+            font-weight:400;
           }
           .nav-link.active{
              background-color:#fff;

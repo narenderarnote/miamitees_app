@@ -12072,18 +12072,59 @@ pre {
   background-color: #FFF;
 }
 
+#app-layout .btn-white {
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+#app-layout .btn-white:hover {
+  background-color: #e6e6e6;
+}
+
+#app-layout .container {
+  max-width: 1060px;
+}
+
 #app-layout .navbar-spark {
   height: 50px;
 }
 
+#app-layout .navbar-spark .navbar-brand {
+  display: block;
+  min-width: 200px;
+  height: 50px;
+  margin: 0;
+  font-weight: 400;
+  font-size: 18px;
+  color: #777;
+  padding-top: 12px;
+}
+
+#app-layout .navbar-spark .navbar-brand img {
+  max-width: 165px;
+}
+
+#app-layout .navbar-spark .navbar-nav a {
+  color: #777;
+  font-weight: 400;
+}
+
 #app-layout .navbar-static-top {
   margin: 0;
-  background: #e7e7e7;
+  background: #f8f8f8;
 }
 
 #app-layout .top-nav-secondary {
   border-bottom: 1px solid #EEE;
   background: #282828;
+}
+
+#app-layout .top-nav-secondary .navbar-header .navbar-brand {
+  padding: 15px;
+}
+
+#app-layout .top-nav-secondary .navbar-header .navbar-brand img {
+  max-width: 165px;
 }
 
 #app-layout .top-nav-secondary li > a {
@@ -12110,22 +12151,15 @@ pre {
   background: #f00;
 }
 
-#app-layout .top-nav-secondary .navbar-brand {
-  display: block;
-  min-width: 200px;
-  height: 50px;
-  margin: 0;
-}
-
-#app-layout .top-nav-secondary .navbar-brand img {
-  max-width: 165px;
-}
-
 #app-layout .sync-add {
   border-radius: 5px;
   padding: 4px 10px;
   font-size: 14px;
   font-weight: 400;
+}
+
+#app-layout .sync-add:hover {
+  background: #f2f2f2;
 }
 
 #app-layout .btn-primary {
@@ -12141,7 +12175,6 @@ pre {
 
 #app-layout a:hover {
   text-decoration: none;
-  background-color: #d2d2d2;
 }
 
 #app-layout a.btn-link {
@@ -12177,6 +12210,22 @@ a:hover {
   z-index: 9999999999999;
 }
 
+main .breadcrumb {
+  padding: 8px 15px;
+}
+
+main .breadcrumb .breadcrumb-item.active {
+  color: #333;
+}
+
+main .printfile-tabs .h-15 {
+  height: 15px;
+}
+
+main .printfile-tabs .w-15 {
+  width: 15px;
+}
+
 main .printfile-tabs .show-chooseitems {
   margin-top: 28px;
 }
@@ -12192,6 +12241,7 @@ main .printfile-tabs .nav-tabs {
 main .printfile-tabs .nav-tabs > li a {
   padding: 10px 15px;
   color: #f00;
+  font-weight: 400;
 }
 
 main .printfile-tabs .nav-tabs > li .nav-link.active {
