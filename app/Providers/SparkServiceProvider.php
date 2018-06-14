@@ -56,7 +56,9 @@ class SparkServiceProvider extends ServiceProvider
         $this->sendSupportEmailsTo = getenv('EMAIL_SUPPORT');
     } 
     public function booted()
-    {
+    {   
+        Spark::afterLoginRedirectTo('/dashboard/store');
+
         Spark::useStripe()->noCardUpFront()->trialDays(50);
 
         Spark::freePlan()
