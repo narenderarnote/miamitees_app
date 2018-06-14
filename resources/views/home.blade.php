@@ -25,7 +25,7 @@
                                         </a>
                                     </td>
                                     <td class="text-center">
-                                        <span class="label label-success">
+                                        <span class="badge badge-success">
                                         Active                   
                                         </span>
                                     </td>
@@ -47,7 +47,7 @@
                                         </a>
                                     </td>
                                     <td class="text-center">
-                                        <span class="label label-warning">
+                                        <span class="badge badge-warning">
                                         Pending                  
                                         </span>
                                     </td>

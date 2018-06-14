@@ -1,7 +1,10 @@
 // @import "./spark/spark";
 @import "./../../../vendor/laravel/spark-aurelius/resources/assets/sass/spark";
-#app-layout {
+  #app-layout {
     background-color: #FFF;
+    .navbar-spark{
+      height:50px;
+    }
     .navbar-static-top {
       margin: 0;
       background: #e7e7e7;
@@ -43,21 +46,25 @@
         }
       }
     }
-    .btn {
+    .sync-add {
       border-radius: 5px;
-      &.btn-primary {
-        color: #FFF !important;
-        border: none;
-        background: #f00;
-        outline: none !important;
-        &:hover {
-          background: rgb(226, 48, 48);
-        }
+      padding: 4px 10px;
+      font-size: 14px;
+      font-weight: 400;
+    }
+    .btn-primary {
+      color: #FFF !important;
+      border: none;
+      background: #f00;
+      outline: none !important;
+      &:hover {
+        background: rgb(226, 48, 48);
       }
     }
     a {
       &:hover {
         text-decoration: none;
+        background-color:#d2d2d2;
       }
       &.btn-link {
         color: #f00;

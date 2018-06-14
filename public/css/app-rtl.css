@@ -12072,6 +12072,10 @@ pre {
   background-color: #FFF;
 }
 
+#app-layout .navbar-spark {
+  height: 50px;
+}
+
 #app-layout .navbar-static-top {
   margin: 0;
   background: #e7e7e7;
@@ -12117,23 +12121,27 @@ pre {
   max-width: 165px;
 }
 
-#app-layout .btn {
+#app-layout .sync-add {
   border-radius: 5px;
+  padding: 4px 10px;
+  font-size: 14px;
+  font-weight: 400;
 }
 
-#app-layout .btn.btn-primary {
+#app-layout .btn-primary {
   color: #FFF !important;
   border: none;
   background: #f00;
   outline: none !important;
 }
 
-#app-layout .btn.btn-primary:hover {
+#app-layout .btn-primary:hover {
   background: #e23030;
 }
 
 #app-layout a:hover {
   text-decoration: none;
+  background-color: #d2d2d2;
 }
 
 #app-layout a.btn-link {
