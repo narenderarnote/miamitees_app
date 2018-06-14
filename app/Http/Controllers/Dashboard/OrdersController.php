@@ -15,7 +15,7 @@ class OrdersController extends Controller
     
     public function editOrder(){
         
-        return view('dashboard.editOrders');
+        return view('dashboard.editorders');
     
     }
 
