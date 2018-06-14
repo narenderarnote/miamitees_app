@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('index');
 })->name('/');
 
-Route::get('/dashboard/store', 'HomeController@show')->name('dashboard.stores');
+Route::get('/dashboard/store', 'HomeController@show')->name('home');
 
 Route::group(['middleware' => 'members'], function () {
 
