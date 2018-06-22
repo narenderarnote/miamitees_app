@@ -40,7 +40,7 @@
 		<div class="mobile-menu-trigger center-v">
 		   <a class="trigger" href="#"><span class="mobile-menu-icon"></span></a>
 		</div>
-		<a class="logo center-v" href="{{route('/')}}"><img class="mw-100p" src="img/home/miametteslogo.png" alt="Monetize Social Logo"></a>
-		<a class="profile center-v" href="{{route('dashboard.stores')}}"><img class="mw-100p" src="img/home/profile.png" alt="Profile"></a>
+		<a class="logo center-v" href="{{route('/')}}"><img class="mw-100p" src="img/home/printlogo.png" alt="Monetize Social Logo"></a>
+		<a class="profile center-v" href="{{url('dashboard/store')}}"><img class="mw-100p" src="img/home/profile.png" alt="Profile"></a>
 	</div>
 </header>

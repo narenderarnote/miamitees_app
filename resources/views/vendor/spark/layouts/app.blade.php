@@ -27,6 +27,7 @@
 </head>
 <body id="app-layout">
     <div id="spark-app" v-cloak>
+        <input type="hidden" id="session" value="{{ session('shop_email') }}">
         <!-- Navigation -->
         @if (Auth::check())
             @include('spark::nav.user')

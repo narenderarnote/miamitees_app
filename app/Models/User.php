@@ -1,8 +1,9 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Laravel\Spark\User as SparkUser;
+use Illuminate\Database\Eloquent\Model;
 
 class User extends SparkUser
 {
@@ -48,4 +49,6 @@ class User extends SparkUser
         'trial_ends_at' => 'datetime',
         'uses_two_factor_auth' => 'boolean',
     ];
+
+    
 }

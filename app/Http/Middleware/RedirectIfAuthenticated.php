@@ -18,7 +18,7 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
-            return redirect(url('/dashboard/store'));
+            return redirect(url('/dashboard'));
         }
 
         return $next($request);

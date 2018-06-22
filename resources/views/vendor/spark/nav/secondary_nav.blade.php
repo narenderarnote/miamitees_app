@@ -17,7 +17,7 @@
 
             <!-- Branding Image -->
             <a class="navbar-brand" href="{{ url('/') }}" title="Miamitees">
-                <img src="/images/miamiteslogo.png" alt="Miamitees">
+                <img src="/img/home/printlogo.png" alt="Miamitees">
             </a>
         </div>
 

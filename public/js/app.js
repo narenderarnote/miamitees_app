@@ -68114,9 +68114,13 @@ module.exports = function(module) {
 __webpack_require__("./vendor/laravel/spark-aurelius/resources/assets/js/spark-bootstrap.js");
 
 __webpack_require__("./resources/assets/js/components/bootstrap.js");
+var email = document.getElementById("session").value;
+Spark.forms.register = {
+    email: email
+};
 
 var app = new Vue({
-  mixins: [__webpack_require__("./vendor/laravel/spark-aurelius/resources/assets/js/spark.js")]
+    mixins: [__webpack_require__("./vendor/laravel/spark-aurelius/resources/assets/js/spark.js")]
 });
 
 /***/ }),

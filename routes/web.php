@@ -14,8 +14,25 @@
 Route::get('/', function () {
     return view('index');
 })->name('/');
+/**
+     * Dashboard - Allowed for anonymous access
+     */
+Route::group(['namespace' => 'Dashboard', 'prefix' => 'dashboard'], function () {
+    // connect store
+        // shopify Application URL
+        Route::get('/store/connect/{provider}/initiate', 'StoreConnectController@initiate');
 
-Route::get('/dashboard/store', 'HomeController@show')->name('dashboard.stores');
+        // shopify Redirection URL
+        Route::get('/store/connect/{provider}/confirm', 'StoreConnectController@confirm');
+
+        // redirected to this after confirm
+        Route::get('/store/connect/connect-to-account', 'StoreConnectController@connectToAccount');
+
+        // account to connect shop is selected, will connect
+        Route::get('/store/connect/connect-to-account/{account_type}', 'StoreConnectController@connectToAccount');
+});
+
+
 
 Route::group(['middleware' => 'members'], function () {
 
@@ -23,10 +40,11 @@ Route::group(['middleware' => 'members'], function () {
         Route::get('/', function() {
             return redirect('/dashboard/store');
         });
-        
-        /*Store routes*/
 
-        Route::match(['get'], '/store/sync', ["as" => "sync", "uses" => "StoresController@index"]);
+        /*Store routes*/
+        Route::get('/store', 'StoreController@index');
+
+        Route::match(['get'], '/store/sync', ["as" => "sync", "uses" => "StoreController@index"]);
         
         /*files routes*/
 
@@ -44,4 +62,5 @@ Route::group(['middleware' => 'members'], function () {
 
     });
 
+    
 });

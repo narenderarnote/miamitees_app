@@ -34,5 +34,18 @@ return [
         'key'    => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
+    
+    'shopify' => [
+        'client_id' => getenv('SHOPIFY_CLIENT_ID'),
+        'client_secret' => getenv('SHOPIFY_CLIENT_SECRET'),
+        'refresh_token' => getenv('SHOPIFY_REFRESH_TOKEN'),
+        'permissions' => [
+            'read_products',
+            'write_products',
+            'write_orders',
+            'write_fulfillments',
+            'write_shipping'
+        ]
+    ]
 
 ];

@@ -17,7 +17,11 @@
 require('spark-bootstrap');
 
 require('./components/bootstrap');
+var email = document.getElementById("session").value;
+Spark.forms.register = {
+    email: email
+  };
 
 var app = new Vue({
-    mixins: [require('spark')]
+    mixins: [require('spark')]  
 });

@@ -57,7 +57,7 @@ class SparkServiceProvider extends ServiceProvider
     } 
     public function booted()
     {   
-        Spark::afterLoginRedirectTo('/dashboard/store');
+       Spark::afterLoginRedirectTo('/dashboard');
 
         Spark::useStripe()->noCardUpFront()->trialDays(50);
 
@@ -73,4 +73,9 @@ class SparkServiceProvider extends ServiceProvider
             ]);
     }
 
+    public function register()
+    {
+        Spark::useUserModel('App\Models\User');
+        //Spark::useTeamModel('App\Models\Team');
+    }
 }
