@@ -15,6 +15,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\Store\StoreConnectInitiateFormRequest;
 use App\Http\Requests\Dashboard\Store\StoreConnectConfirmFormRequest;
 use App\Http\Requests\Dashboard\Store\StoreConnectSelectAccountFormRequest;
+use App\Jobs\Store\StoreConnectJob;
+
 
 class StoreConnectController extends Controller
 {
@@ -94,7 +96,7 @@ class StoreConnectController extends Controller
                 && Store::shopExistsForCurrentUser($preparedStore->domain)
             )
             : false;
-
+                  
         $otherUsersStores = null;
         $storeExistsForOtherUsers = false;
         if (auth()->check()) {
@@ -141,7 +143,7 @@ class StoreConnectController extends Controller
                             $store->delete();
                         });
                     }
-
+                    
                     if ($storeExistsForCurrentUser) {
                         $store = Store::findByDomainForCurrentUser($preparedStore->domain);
                         $store->access_token = $preparedStore->access_token;

@@ -233,6 +233,33 @@ class StoreController extends Controller
 
     /**
      * Shopify webhooks endpoint
-     */
+    */
+
+    public function webhook(Request $request)
+    {
+        $json = $request->json();
+        $isValid = Shopify::verifyWebhook($request->getContent(), $request->server('HTTP_X_SHOPIFY_HMAC_SHA256'));
+
+        // we will log all webhooks
+        Logger::i(Logger::WEBHOOK_APP)->notice($request->getContent());
+
+        if ($isValid) {
+            $topic = $request->server('HTTP_X_SHOPIFY_TOPIC');
+            $domain = filter_var($request->server('HTTP_X_SHOPIFY_SHOP_DOMAIN'), FILTER_SANITIZE_STRING);
+            $stores = Store::findByDomain($domain);
+
+            switch($topic) {
+                case Shopify::WEBHOOK_TOPIC_APP_UNINSTALLED:
+
+                    foreach ($stores as $store) {
+                        Shopify::i($store->shopifyDomain(), $store->access_token)->removeAllWebhooks();
+                    }
+
+                    break;
+            }
+
+
+        }
+    }
 
 }

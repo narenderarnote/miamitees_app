@@ -13,8 +13,9 @@
 
 Route::get('/', function () {
     return view('index');
-})->name('/');
-/**
+})->name('/');  
+Auth::routes();
+    /**
      * Dashboard - Allowed for anonymous access
      */
 Route::group(['namespace' => 'Dashboard', 'prefix' => 'dashboard'], function () {
@@ -32,7 +33,9 @@ Route::group(['namespace' => 'Dashboard', 'prefix' => 'dashboard'], function () 
         Route::get('/store/connect/connect-to-account/{account_type}', 'StoreConnectController@connectToAccount');
 });
 
-
+//Route::get('/dashboard/store', 'HomeController@index')->name('dashboard.stores');
+// order webhooks
+Route::get('/dashboard/orders/webhook', 'Dashboard\OrdersController@webhook');
 
 Route::group(['middleware' => 'members'], function () {
 
@@ -60,6 +63,40 @@ Route::group(['middleware' => 'members'], function () {
 
         Route::match(['get'], '/orders/review', ["as" => "ordersreview", "uses" => "OrdersController@reviewOrder"]);
 
+        // orders
+        Route::get('/orders', 'OrdersController@index');
+
+        Route::get('/orders/create', 'OrdersController@create');
+
+        Route::get('/orders/{order_id}/update', 'OrdersController@updateView');
+
+        //Route::post('/orders/{order_id}/update', 'OrdersController@update');
+
+        Route::get('/orders/{order_id}/shipping', 'OrdersController@shippingView');
+
+        Route::post('/orders/{order_id}/shipping', 'OrdersController@saveShipping');
+
+        Route::get('/orders/{order_id}/review', 'OrdersController@reviewView');
+
+        Route::post('/orders/{order_id}/review', 'OrdersController@saveReview');
+
+        Route::post('/orders/{order_id}/cancel', 'OrdersController@cancel');
+
+        Route::post('/orders/{order_id}/refund', 'OrdersController@refund');
+
+        //Route::post('/orders/{order_id}/add-variant', 'OrdersController@addVariant');
+
+        Route::post('/orders/{order_id}/update-variant/{variant_id}', 'OrdersController@updateVariant');
+
+        //Route::post('/orders/{order_id}/copy-variant/{variant_id}', 'OrdersController@copyVariant');
+
+        Route::post('/orders/{order_id}/attach-variants', 'OrdersController@attachVariants');
+
+        Route::post('/orders/{order_id}/detach-variant/{variant_id}', 'OrdersController@detachVariant');
+
+        Route::get('/orders/{order_id}/view-shopify', 'OrdersController@viewShopify');
+
+        Route::get('/orders/{order_id}/get-with-new-shipping-price', 'OrdersController@getWithNewShippingPrice');
     });
 
     

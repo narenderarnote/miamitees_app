@@ -37,6 +37,9 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \Laravel\Spark\Http\Middleware\CreateFreshApiToken::class,
         ],
+        
+        'webhooks' => [
+        ],
 
         'api' => [
             'throttle:60,1',

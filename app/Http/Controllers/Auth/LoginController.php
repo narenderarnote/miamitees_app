@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
+use Session;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+
+use App\Http\Controllers\Controller;
 
 class LoginController extends Controller
 {
@@ -17,15 +19,22 @@ class LoginController extends Controller
     | to conveniently provide its functionality to your applications.
     |
     */
-
-    use AuthenticatesUsers;
+    
+    use AuthenticatesUsers {
+        redirectPath as traitRedirectPath;
+    }
 
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
-    protected $redirectTo = '/dashboard/store';
+    protected $redirectTo = '/dashboard';
+    
+    public function username()
+    {
+        return 'username';
+    }
 
     /**
      * Create a new controller instance.
@@ -34,6 +43,31 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
+        $this->middleware('guest', ['except' => 'logout']);
+    }
+    
+    protected function credentials($request)
+    {
+        $credentials = $request->only($this->username(), 'password');
+        $field = filter_var($credentials[$this->username()], FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+        
+        $newCredentials = [
+            $field => $credentials[$this->username()],
+            'password' => $credentials['password']
+        ];
+        
+        return $newCredentials;
+    }
+
+    public function redirectPath()
+    {
+        $redirectPath = $this->traitRedirectPath();
+        
+        if (Session::get('redirectToAfterAuth')) {
+            $redirectPath = Session::get('redirectToAfterAuth');
+            Session::forget('redirectToAfterAuth');
+        }
+        
+        return $redirectPath;
     }
 }

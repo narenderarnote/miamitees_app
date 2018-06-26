@@ -10,6 +10,12 @@ use App\Components\Shopify;
 
 class Store extends Model
 {
+    use \Venturecraft\Revisionable\RevisionableTrait;
+    use \Culpa\Traits\Blameable;
+    use \Illuminate\Database\Eloquent\SoftDeletes;
+    use Traits\DatetimeTrait;
+    use Traits\HashidTrait;
+    use Traits\CacheTrait;
     
     const CONNECT_MODE__UNIQUE_REPLACE = 'unique_replace'; // store with the same provider_store_id will be replaced
     const CONNECT_MODE__MULTIPLE = 'multiple'; // few stores with the same domain could exists parallel

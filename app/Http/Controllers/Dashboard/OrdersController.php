@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 
 class OrdersController extends Controller
 {
+    use \App\Http\Controllers\Dashboard\Traits\Orders\WebhookTrait;    
     public function index(){
         
         return view('dashboard.orders');

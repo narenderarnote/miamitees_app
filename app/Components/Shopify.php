@@ -251,16 +251,16 @@ class Shopify
             $url = str_replace(env('APP_HOME'), env('APP_NGROK_HOME'), $url);
             $url = str_replace(env('APP_PPM_HOME'), env('APP_NGROK_HOME'), $url);
         }
-
+        
         return $this->api->call([
-            'URL' => 'admin/webhooks.json',
+            'URL' => '/admin/webhooks.json',
             'METHOD' => 'POST',
             'DATA' => [
                 'webhook' => [
                     'topic' => $topic,
                     'address' => $url,
                     'format' => 'json'
-                ]
+                ],
             ]
         ]);
     }

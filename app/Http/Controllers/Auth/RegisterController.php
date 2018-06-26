@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Model\User;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Hash;
+use Session;
+use Auth;
+
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Http\Request;
+
+use App\Http\Controllers\Controller;
+use App\Http\Requests\User\RegisterFormRequest;
+use App\Models\User;
+
 class RegisterController extends Controller
 {
     /*
@@ -26,7 +30,7 @@ class RegisterController extends Controller
     }
 
     /**
-     * Where to redirect users after registration.
+     * Where to redirect users after login / registration.
      *
      * @var string
      */
@@ -39,22 +43,13 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
+       // parent::__construct();
         $this->middleware('guest');
     }
 
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
-        ]);
+    protected function validator(array $data) {
+        $registerFormRequest = new RegisterFormRequest();
+        return Validator::make($data, $registerFormRequest->rules());
     }
 
     public function redirectPath()
@@ -65,6 +60,7 @@ class RegisterController extends Controller
             $redirectPath = Session::get('redirectToAfterAuth');
             Session::forget('redirectToAfterAuth');
         }
+
         return $redirectPath;
     }
 
@@ -72,15 +68,22 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\User
+     * @return User
      */
-    protected function create(Request $request)
+    protected function create(array $data)
     {
-        
-        return User::create([
-            'name' => $request['name'],
-            'email' => $request['email'],
-            'password' => Hash::make($request['password']),
+        $user = new User();
+        $user->fill([
+            'username' => str_replace('@', '_', $data['email']),
+            'email' => $data['email']
         ]);
+        $user->setPassword($data['password']);
+        $user->confirmation_code = str_random(32);
+
+        $user->createUser();
+
+        session(['plan' => $data['plan']]);
+
+        return $user;
     }
 }

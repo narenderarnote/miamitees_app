@@ -16,3 +16,20 @@ Route::group([
 ], function () {
     //
 });
+
+/**
+ * Webhooks - Allowed for anonymous access
+ */
+Route::group(['middleware' => ['webhooks']], function () {
+    // app webhooks
+        Route::post('/dashboard/store/webhook', 'Dashboard\StoreController@webhook');
+
+    // product webhooks
+        Route::post('/dashboard/products/webhook', 'Dashboard\ProductsController@webhook');
+
+    // order webhooks
+        Route::post('/dashboard/orders/webhook', 'Dashboard\OrdersController@webhook');
+
+    // braintree webhooks
+        Route::post('/braintree-webhooks', 'BraintreeWebhookController@webhook');
+});
